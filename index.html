@@ -8,11 +8,19 @@
     <title>Rock Paper Scissors</title>
   </head>
   <body>
-    <h2>Let's Play Rock-Paper-Scissors</h2>
-    <p>Use a button below to pick rock, paper, or scissors.</p>
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
+    <div id="game" style="width: 300px; text-align: center">
+      <h2>Let's Play Rock-Paper-Scissors</h2>
+      <p>Use a button below to pick rock, paper, or scissors.</p>
+      <button id="rock">Rock</button>
+      <button id="paper">Paper</button>
+      <button id="scissors">Scissors</button>
+    </div>
+
+    <div style="width: 300px; text-align: center">
+      <p id="choices">No choices yet</p>
+    </div>
+
+    <!-- for later 
     <div id="score" style="width: 300px; text-align: center">
       <h2>Score</h2>
       <div style="width: 150px; float: left">
@@ -23,7 +31,9 @@
         <h2>You</h2>
         <p id="humanScore">0</p>
       </div>
-    </div>
+      <h2 id="winner">No winner yet</h2>
+    </div> -->
+
     <script src="rockpaperscissors.js"></script>
   </body>
 </html>
