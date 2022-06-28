@@ -2,6 +2,7 @@ let humWins = 0;
 let compWins = 0; 
 let humanRPS = 0;
 
+const won = document.querySelector('body');
 const choices = document.querySelector('#choices');
 const compScore = document.querySelector('#computerScore');
 const humScore = document.querySelector('#humanScore');
@@ -25,7 +26,9 @@ function playHand() {
     if (this.id === "rock") humanRPS = 1; 
     else if (this.id === "paper") humanRPS = 2; 
     else if (this.id === "scissors") humanRPS = 3;
-    checkWhoWins(computerChoice(), humanRPS)
+    checkWhoWins(computerChoice(), humanRPS);
+    updateScores();
+    endOfGame();
 } 
 
 function checkWhoWins(comp, hum) {
@@ -60,6 +63,20 @@ function checkWhoWins(comp, hum) {
             compWins++;
         }
     }
+}
+
+function updateScores() {
+    compScore.textContent = compWins;
+    humScore.textContent = humWins;
+}
+
+function endOfGame(){
+    if (compWins == 5) won.innerHTML = "<div style='width: 300px; text-align: center'><h2>The computer won 5 games and is the champion!</h2><button onClick='restart()'>Play Again</button></div>";
+    else if (humWins === 5) won.innerHTML = "<div style='width: 300px; text-align: center'></h2>You won 5 games are are the champion!</h2><button onClick='restart()'>Play Again</button></div>";
+}
+
+function restart(){
+    window.location.reload("Restart")
 }
 
 
